@@ -10,7 +10,7 @@ class Ventana_Insertar_Vista():
         self.configurar_ventana()
 
     def configurar_ventana(self):
-        self.root.title("Menu principal") #Aplica un titulo a la ventana
+        self.root.title("Insertar datos") #Aplica un titulo a la ventana
         self.root.resizable(0,0)  #Evita que se pueda redimensionar la ventana
         self.dimensiones_ventana()
 
@@ -61,9 +61,7 @@ class Ventana_Insertar_Vista():
             bd = 0,
             bg = "#202125",
             highlightthickness = 0,
-            fg = "#ffffff")
-        
-        self.txt_proyecto.insert(0,"txt_proyecto")
+            fg = "#ffffff") 
 
         self.txt_proyecto.place(
             x = 56, y = 180,
@@ -88,7 +86,6 @@ class Ventana_Insertar_Vista():
             highlightthickness = 0,
             fg = "#ffffff")
         
-        self.txt_capacidad.insert(0,"txt_capacidad")
 
         self.txt_capacidad.place(
             x = 56, y = 266,
@@ -113,8 +110,6 @@ class Ventana_Insertar_Vista():
             highlightthickness = 0,
             fg = "#ffffff")
         
-        self.txt_fecha.insert(0,"txt_Fecha")
-
         self.txt_fecha.place(
             x = 802, y = 270,
             width = 227,
@@ -137,8 +132,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125", 
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_municipio.insert(0,"Municipio")
 
         self.txt_municipio.place(
             x = 550, y = 270,
@@ -162,8 +155,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_departamento.insert(0,"txt_departamento")
 
         self.txt_departamento.place(
             x = 306, y = 360,
@@ -187,8 +178,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_cod_departamento.insert(0,"cod_departamento")
 
         self.txt_cod_departamento.place(
             x = 303, y = 270,
@@ -213,8 +202,6 @@ class Ventana_Insertar_Vista():
             highlightthickness = 0,
             fg = "#ffffff")
 
-        self.cod_municipio.insert(0,"código municipio")
-
         self.cod_municipio.place(
             x = 550, y = 360,
             width = 227,
@@ -238,8 +225,6 @@ class Ventana_Insertar_Vista():
             highlightthickness = 0,
             fg = "#ffffff")
         
-        self.txt_tipo.insert(0, "Tipo")
-
         self.txt_tipo.place(
             x = 802, y = 447,
             width = 227,
@@ -251,7 +236,6 @@ class Ventana_Insertar_Vista():
             borderwidth = 0,
             highlightthickness = 0,
             relief = "flat")
-    
 
         self.btn_guardar.place(
             x = 840, y = 537,
@@ -288,8 +272,6 @@ class Ventana_Insertar_Vista():
             highlightthickness = 0,
             fg = "#ffffff")
         
-        self.txt_usuarios.insert(0,"txt_usuarios")
-
         self.txt_usuarios.place(
             x = 59, y = 360,
             width = 227,
@@ -312,8 +294,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_energia.insert(0,"txt_energia")
 
         self.txt_energia.place(
             x = 56, y = 447,
@@ -337,8 +317,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_inversion.insert(0,"Inversion")
 
         self.txt_inversion.place(
             x = 303, y = 447,
@@ -362,8 +340,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.emisiones.insert(0,"Emisiones Ton/año")
 
         self.emisiones.place(
             x = 802, y = 360,
@@ -387,8 +363,6 @@ class Ventana_Insertar_Vista():
             bg = "#202125",
             highlightthickness = 0,
             fg = "#ffffff")
-        
-        self.txt_empleos_estimados.insert(0,"Empleos estimados")
 
         self.txt_empleos_estimados.place(
             x = 550, y = 447,

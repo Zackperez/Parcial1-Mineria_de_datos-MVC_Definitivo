@@ -23,32 +23,43 @@ class Ventana_Login_Controlador():
         #self.view.btnRegistrar_Usuario.config(command = self.ventana_registro)
         # 5> create event handler
         self.view.b0.config(command=self.iniciar_sesion)
+        self.view.b2.config(command = self.ventana_registro)
         # 6> run Tkinter application
         self.view.root.mainloop()
 
     def iniciar_sesion(self):
-   
-        bd=pymysql.connect(
-            host="localhost",
-            user="root",
-            password="",
-            db="bd_energias"
-        )
-        fcursor=bd.cursor()
 
-        fcursor.execute("SELECT contraseña FROM tlogin WHERE usuario='"+ self.view.txt_nombre_usuario.get()+"'and contraseña='"+ self.view.txt_password_usuario.get()+"'")
+        try:
+            bd=pymysql.connect(
+                host="localhost",
+                user="root",
+                password="",
+                db="bd_energias"
+            )
+        except:
+            messagebox.showinfo(title="Inicio de sesión correcta", message="Comprueba que la Base de Datos esté activa")
+        else:
 
-        if fcursor.fetchall():
-            messagebox.showinfo(title="Inicio de sesión correcta", message="Usuario y contraseña correcta")
-            self.ventana_principal()
-        else: 
-            messagebox.showinfo(title="Inicio de sesión incorrecta", message="Usuario y contraseña incorrecta")
-            
-        bd.close()
+            fcursor=bd.cursor()
+
+            if len(self.view.txt_nombre_usuario.get()) !=0 and len(self.view.txt_password_usuario.get()) !=0:
+
+                fcursor.execute("SELECT contraseña FROM tlogin WHERE usuario='"+ self.view.txt_nombre_usuario.get()+"'and contraseña='"+ self.view.txt_password_usuario.get()+"'")
+
+                if fcursor.fetchall():
+                    messagebox.showinfo(title="Inicio de sesión correcta", message="Usuario y contraseña correcta")
+                    self.ventana_principal()
+                else: 
+                    messagebox.showinfo(title="Inicio de sesión incorrecta", message="Usuario y contraseña incorrecta")
+                    
+                bd.close()
+            else:
+                messagebox.showinfo(title="Error", message="Los campos no pueden estar vacio")
 
     def ventana_principal(self):
         Ventana_Principal_Controlador()
         self.view.root.destroy()
 
     def ventana_registro(self):
+        self.view.root.destroy()
         Ventana_Registro_Controlador()

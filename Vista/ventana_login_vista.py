@@ -1,16 +1,16 @@
 import tkinter as tk
 from tkinter import *
+from PIL import ImageTk, Image
 
 class Ventana_Login_Vista():
 
     def __init__(self):
-        
         self.root = tk.Tk()
         self.configurar_ventana()
         self.ventana_bonita()
 
     def configurar_ventana(self):
-        self.root.title("Menu principal") #Aplica un titulo a la ventana
+        self.root.title("Inicio de sesión") #Aplica un titulo a la ventana
         self.root.resizable(0,0)  #Evita que se pueda redimensionar la ventana
         self.dimensiones_ventana()
 
@@ -34,8 +34,8 @@ class Ventana_Login_Vista():
             highlightthickness = 0,
             relief = "ridge")
         canvas.place(x = 0, y = 0)
-
-        self.background_img = PhotoImage(file = f"Imagenes\\Login\\background.png")
+        self.bg = Image.open("Imagenes\\Login\\background.png")
+        self.background_img = ImageTk.PhotoImage(self.bg)
         self.background = canvas.create_image(
             450.0, 300.0,
             image=self.background_img)
@@ -103,13 +103,24 @@ class Ventana_Login_Vista():
             image = self.img0,
             borderwidth = 0,
             highlightthickness = 0,
-            command = self.saludar,
             relief = "flat")
 
         self.b0.place(
-            x = 126, y = 397,
-            width = 189,
+            x = 50, y = 397,
+            width = 149,
             height = 34)
+        
+        self.img2 = PhotoImage(file = f"Imagenes\\Login\\img2.png")
 
-    def saludar(self):
-        print("HOLA")
+        self.b2 = Button(
+            image = self.img2,
+            borderwidth = 0,
+            highlightthickness = 0,
+            relief = "flat")
+
+        self.b2.place(
+            x = 230, y = 397,
+            width = 149,
+            height = 34)
+        
+
