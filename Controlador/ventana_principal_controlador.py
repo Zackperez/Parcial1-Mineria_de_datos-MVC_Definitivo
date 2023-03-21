@@ -5,6 +5,7 @@ from Controlador.ventana_menu_insertar_controlador import Ventana_Menu_Insertar_
 from Controlador.ventana_menu_visualizar_controlador import Ventana_Menu_Visualizar_Controlador
 
 from Modelo.ventana_menu_insertar_modelo import *
+import webbrowser
 
 class Ventana_Principal_Controlador():
     def __init__(self):
@@ -15,7 +16,7 @@ class Ventana_Principal_Controlador():
 
         self.view.opciones.add_command(label="Insertar", command = self.ventana_menu_insertar_datos)
         self.view.opciones.add_command(label="Visualizar",  command = self.ventana_menu_visualizar_datos)
-        self.view.opciones.add_command(label="Acerca de",  command = self.saludar)
+        self.view.opciones.add_command(label="Acerca de",  command = self.abrir_enlace)
         self.view.menuppal.add_cascade(label="Opciones", menu=self.view.opciones)
         self.view.root.config(menu=self.view.menuppal)
 
@@ -27,3 +28,6 @@ class Ventana_Principal_Controlador():
 
     def ventana_menu_visualizar_datos(self):
         Ventana_Menu_Visualizar_Controlador()
+
+    def abrir_enlace(self):
+        webbrowser.open('https://malachite-single-c94.notion.site/Manual-de-usuario-ba0fc44199b241a98d791ec6b3f262ae')
